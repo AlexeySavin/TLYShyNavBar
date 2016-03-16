@@ -10,8 +10,6 @@
 #import <UIKit/UIKit.h>
 #import "TLYShyNavBarFade.h"
 
-@class TLYShyViewController;
-
 @protocol TLYShyNavBarManagerDelegate;
 
 /** CLASS DESCRIPTION:
@@ -77,7 +75,7 @@
  */
 @property (nonatomic, weak) id<TLYShyNavBarManagerDelegate> delegate;
 
-@property (nonatomic, strong, readonly) TLYShyViewController *navBarController;
+@property (nonatomic) BOOL handleStatusBar;
 
 - (void)expand;
 

@@ -216,6 +216,15 @@ static void * const kTLYShyNavBarManagerKVOContext = (void*)&kTLYShyNavBarManage
     self.extensionController.sticky = stickyExtensionView;
 }
 
+- (BOOL)handleStatusBar
+{
+    return self.navBarController.handleStatusBar;
+}
+
+- (void)setHandleStatusBar:(BOOL)handleStatusBar
+{
+    self.navBarController.handleStatusBar = handleStatusBar;
+}
 
 #pragma mark - Private methods
 

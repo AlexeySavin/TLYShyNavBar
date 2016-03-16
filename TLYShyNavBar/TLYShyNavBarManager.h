@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "TLYShyNavBarFade.h"
-#import "ShyControllers/TLYShyViewController.h"
 
+@class TLYShyViewController;
 
 @protocol TLYShyNavBarManagerDelegate;
 

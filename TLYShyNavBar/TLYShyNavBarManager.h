@@ -77,7 +77,7 @@
 
 @property (nonatomic) BOOL handleStatusBar;
 
-- (void)expand;
+- (void)expandWithCompletion:(void (^)())completion;
 
 @end
 

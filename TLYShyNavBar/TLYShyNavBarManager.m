@@ -424,10 +424,14 @@ static void * const kTLYShyNavBarManagerKVOContext = (void*)&kTLYShyNavBarManage
     self.previousYOffset = NAN;
 }
 
-- (void)expand
+- (void)expandWithCompletion:(void (^)())completion
 {
     [UIView animateWithDuration:0.2 animations:^ {
         [self cleanup];
+    } completion:^(BOOL finished) {
+        if (completion) {
+            completion();
+        }
     }];
 }
 

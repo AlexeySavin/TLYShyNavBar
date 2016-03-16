@@ -76,6 +76,8 @@
  */
 @property (nonatomic, weak) id<TLYShyNavBarManagerDelegate> delegate;
 
+- (void)expand;
+
 @end
 
 /* PROTOCOL DESCRIPTION:

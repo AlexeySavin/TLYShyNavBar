@@ -330,7 +330,7 @@ static void * const kTLYShyNavBarManagerKVOContext = (void*)&kTLYShyNavBarManage
     __weak __typeof(self) weakSelf;
     void (^completion)() = ^
     {
-        __typeof(self) strongSelf = weakSelf;
+        __typeof(self) strongSelf = self;
         if (strongSelf) {
             if (strongSelf.contracting) {
                 if ([strongSelf.delegate respondsToSelector:@selector(shyNavBarManagerDidFinishContracting:)]) {
@@ -413,6 +413,13 @@ static void * const kTLYShyNavBarManagerKVOContext = (void*)&kTLYShyNavBarManage
 {
     [self.navBarController expand];
     self.previousYOffset = NAN;
+}
+
+- (void)expand
+{
+    [UIView animateWithDuration:0.2 animations:^ {
+        [self cleanup];
+    }];
 }
 
 #pragma mark - UIScrollViewDelegate methods

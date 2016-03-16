@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "TLYShyNavBarFade.h"
+#import "ShyControllers/TLYShyViewController.h"
 
 
 @protocol TLYShyNavBarManagerDelegate;
@@ -75,6 +76,8 @@
 /* Use this to be notified about contraction and expansion events.
  */
 @property (nonatomic, weak) id<TLYShyNavBarManagerDelegate> delegate;
+
+@property (nonatomic, strong, readonly) TLYShyViewController *navBarController;
 
 - (void)expand;
 

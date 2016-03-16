@@ -8,6 +8,12 @@
 
 #import "TLYShyViewController.h"
 
+static inline CGFloat AACStatusBarHeight()
+{
+    CGSize  statusBarSize = [UIApplication sharedApplication].statusBarFrame.size;
+    CGFloat statusBarHeight = MIN(statusBarSize.width, statusBarSize.height);
+    return statusBarHeight;
+}
 
 @implementation TLYShyViewController (AsParent)
 
@@ -56,7 +62,11 @@
 
 - (CGFloat)contractionAmountValue
 {
-    return self.sticky ? 0.f : CGRectGetHeight(self.view.bounds);
+    CGFloat height = CGRectGetHeight(self.view.bounds);
+    if (self.handleStatusBar && [UIApplication sharedApplication].isStatusBarHidden) {
+        height -= AACStatusBarHeight();
+    }
+    return self.sticky ? 0.f : height;
 }
 
 - (CGPoint)contractedCenterValue

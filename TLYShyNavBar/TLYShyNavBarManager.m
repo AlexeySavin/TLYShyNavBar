@@ -8,7 +8,6 @@
 
 #import "TLYShyNavBarManager.h"
 
-#import "ShyControllers/TLYShyViewController.h"
 #import "ShyControllers/TLYShyStatusBarController.h"
 #import "ShyControllers/TLYShyScrollViewController.h"
 

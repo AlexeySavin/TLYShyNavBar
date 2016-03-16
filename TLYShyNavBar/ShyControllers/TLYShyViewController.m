@@ -8,13 +8,6 @@
 
 #import "TLYShyViewController.h"
 
-static inline CGFloat AACStatusBarHeight()
-{
-    CGSize  statusBarSize = [UIApplication sharedApplication].statusBarFrame.size;
-    CGFloat statusBarHeight = MIN(statusBarSize.width, statusBarSize.height);
-    return statusBarHeight;
-}
-
 @implementation TLYShyViewController (AsParent)
 
 - (CGFloat)maxYRelativeToView:(UIView *)superview
@@ -32,6 +25,7 @@ static inline CGFloat AACStatusBarHeight()
 
 @end
 
+static CGFloat const kTLYShyViewControllerStatusBarHeight = 20.0f;
 
 @interface TLYShyViewController ()
 
@@ -64,7 +58,7 @@ static inline CGFloat AACStatusBarHeight()
 {
     CGFloat height = CGRectGetHeight(self.view.bounds);
     if (self.handleStatusBar && [UIApplication sharedApplication].isStatusBarHidden) {
-        height -= AACStatusBarHeight();
+        height -= kTLYShyViewControllerStatusBarHeight;
     }
     return self.sticky ? 0.f : height;
 }

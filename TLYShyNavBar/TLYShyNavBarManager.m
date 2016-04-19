@@ -226,6 +226,16 @@ static void * const kTLYShyNavBarManagerKVOContext = (void*)&kTLYShyNavBarManage
     self.navBarController.handleStatusBar = handleStatusBar;
 }
 
+- (BOOL)contracted
+{
+    return self.navBarController.contracted;
+}
+
+- (BOOL)expanded
+{
+    return self.navBarController.expanded;
+}
+
 #pragma mark - Private methods
 
 - (BOOL)_scrollViewIsSuffecientlyLong

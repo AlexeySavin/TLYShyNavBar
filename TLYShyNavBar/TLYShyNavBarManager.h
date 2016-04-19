@@ -76,6 +76,8 @@
 @property (nonatomic, weak) id<TLYShyNavBarManagerDelegate> delegate;
 
 @property (nonatomic) BOOL handleStatusBar;
+@property (nonatomic) BOOL contracted;
+@property (nonatomic) BOOL expanded;
 
 - (void)expandWithCompletion:(void (^)())completion;
 
